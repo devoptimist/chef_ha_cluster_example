@@ -1,0 +1,21 @@
+bootstrap_node_public_ip = "" # the bootstrap nodes public ip address e.g. "35.176.7.5"
+bootstrap_node_private_ip = "" # the bootstrap nodes private ip address e.g. "10.0.1.62"
+backend_public_ips = ["",""] # list of the backend public ip addresses e.g. ["35.178.213.202", "18.130.105.57"]
+
+frontend_public_ips = ["","",""] # list of the frontend public ip addresses
+frontend_private_ips = ["","",""] # list of the frontend private ip addresses 
+frontend_node_count = 3 # number of frontend nodes being created
+
+ssh_user_name = "" # user name for ssh access to the cluster
+ssh_user_private_key_path = "" # path for the ssh key used to access the cluster
+
+frontend_extra_config = <<-EOF
+
+rabbitmq['queue_length_monitor_enabled'] = false
+EOF
+
+postgresql_superuser_password = "" # a password string
+postgresql_replication_password = "" # a password string
+etcd_initial_cluster_token  =  "" # user created token string
+elasticsearch_cluster_name = "" # user create name for the es cluster 
+force_frontend_chef_run = "default" # set to anything other than default to force a rerun of chef on all the cluster nodes
