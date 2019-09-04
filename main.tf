@@ -1,6 +1,6 @@
 module "chef_backend_cluster" {
   source                          = "devoptimist/chef-backend/linux"
-  version                         = "0.0.2"
+  version                         = "0.0.6"
   bootstrap_node_ip               = var.bootstrap_node_public_ip
   peers                           = var.bootstrap_node_private_ip
   backend_ips                     = var.backend_public_ips
@@ -15,4 +15,5 @@ module "chef_backend_cluster" {
   etcd_initial_cluster_token      = var.etcd_initial_cluster_token
   elasticsearch_cluster_name      = var.elasticsearch_cluster_name
   force_frontend_chef_run         = var.force_frontend_chef_run
+  timeout                         = var.timeout
 }
