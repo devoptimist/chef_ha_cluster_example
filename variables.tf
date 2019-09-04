@@ -73,5 +73,5 @@ variable "force_frontend_chef_run" {
 variable "timeout" {
   description = "The timeout to wait for the connection to become available. Should be provided as a string like 30s or 5m, Defaults to 5 minutes"
   type        = string
-  default     = "default"
+  default     = "5m"
 }
